@@ -1,10 +1,10 @@
 package main
 
 import (
-	"amjwt"
 	"bufio"
 	"fmt"
 	"github.com/spf13/cobra"
+	"github.com/yukitsune/amjwt"
 	"io"
 	"io/ioutil"
 	"os"

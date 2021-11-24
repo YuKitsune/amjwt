@@ -1,7 +1,6 @@
 
 # Versioning information
 GIT_COMMIT := $(shell git rev-parse HEAD)
-GIT_BRANCH := $(shell git name-rev --name-only HEAD | sed "s/~.*//")
 
 ## Gets the current tag name or commit SHA
 VERSION ?= $(shell git describe --tags ${COMMIT} 2> /dev/null || echo "$(GIT_COMMIT)")
