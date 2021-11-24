@@ -7,7 +7,7 @@
 <h3 align="center">
   An Apple Music JWT generator.
 
-  [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/yukitsune/amjwt/ci)](https://github.com/yukitsune/amjwt/actions?query=workflow:ci)
+  [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/yukitsune/amjwt/CI)](https://github.com/yukitsune/amjwt/actions?query=workflow:CI)
   [![Go Report Card](https://goreportcard.com/badge/github.com/yukitsune/amjwt)](https://goreportcard.com/report/github.com/yukitsune/amjwt)
   [![PkgGoDev](https://pkg.go.dev/badge/mod/github.com/yukitsune/amjwt)](https://pkg.go.dev/mod/github.com/yukitsune/amjwt)
 </h3>
