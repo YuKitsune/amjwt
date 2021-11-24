@@ -1,8 +1,8 @@
 package amjwt_test
 
 import (
-	"amjwt"
 	"github.com/golang-jwt/jwt"
+	"github.com/yukitsune/amjwt"
 	"io/ioutil"
 	"testing"
 	"time"
