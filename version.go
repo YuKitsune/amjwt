@@ -1,6 +1,7 @@
 package amjwt
 
 var (
+	// Version defines the version of amjwt
 	Version string
 )
 

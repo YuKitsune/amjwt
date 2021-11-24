@@ -6,6 +6,7 @@ import (
 	"time"
 )
 
+// CreateJwt will create the JWT and return it as a string
 func CreateJwt(keyId string, teamId string, expiryDays int, privateKeyBytes []byte) (string, error) {
 
 	issueTime := time.Now()

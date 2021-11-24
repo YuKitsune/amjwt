@@ -29,6 +29,10 @@ func TestJwtContainsKeyId(t *testing.T) {
 	tok, err := jwt.Parse(token, func(token *jwt.Token) (interface{}, error) {
 		return publicKey, nil
 	})
+	if err != nil {
+		t.Error(err)
+		return
+	}
 
 	if tok.Header["kid"] != testKey {
 		t.Fail()
@@ -53,6 +57,10 @@ func TestJwtContainsTeamId(t *testing.T) {
 	tok, err := jwt.Parse(token, func(token *jwt.Token) (interface{}, error) {
 		return publicKey, nil
 	})
+	if err != nil {
+		t.Error(err)
+		return
+	}
 
 	claimsMap := tok.Claims.(jwt.MapClaims)
 
@@ -92,7 +100,7 @@ func TestJwtExpiryIsSet(t *testing.T) {
 	expectedDiff := int64(expiry * 24 * 60 * 60)
 
 	// It's really unlikely that we need the buffers here, but i'm paranoid anyway...
-	if diff > expectedDiff + 1 || diff < expectedDiff - 1 {
+	if diff > expectedDiff+1 || diff < expectedDiff-1 {
 		t.Error(err)
 		return
 	}

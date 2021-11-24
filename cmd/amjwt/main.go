@@ -11,15 +11,19 @@ import (
 )
 
 const privateKeyFilePathName = "private-key-file"
+
 var privateKeyFilePath string
 
 const keyIdName = "key-id"
+
 var keyId string
 
 const teamIdName = "team-id"
+
 var teamId string
 
 const expiryDaysName = "expiry"
+
 var expiryDays int
 
 // Apple Music has a maximum of 6 months
@@ -30,7 +34,7 @@ func main() {
 	var versionCmd = &cobra.Command{
 		Use:   "version",
 		Short: "Prints the version of the binary",
-		RunE:  func (cmd *cobra.Command, args []string) error {
+		RunE: func(cmd *cobra.Command, args []string) error {
 			fmt.Println(amjwt.Version)
 			return nil
 		},
@@ -39,7 +43,7 @@ func main() {
 	var rootCmd = &cobra.Command{
 		Use:   "amjwt",
 		Short: "Generates the JWT for Apple Music",
-		Args: cobra.OnlyValidArgs,
+		Args:  cobra.OnlyValidArgs,
 		RunE:  exec,
 	}
 
@@ -99,7 +103,7 @@ func exec(cmd *cobra.Command, args []string) error {
 	return nil
 }
 
-func readStdin() (bytes []byte, err error){
+func readStdin() (bytes []byte, err error) {
 	info, err := os.Stdin.Stat()
 	if err != nil {
 		return bytes, err
