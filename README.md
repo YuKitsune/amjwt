@@ -1,16 +1,25 @@
 <h1 align="center">
+    🍎🎵
+    <br />
     AMJWT
 </h1>
 
 <h3 align="center">
   An Apple Music JWT generator.
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/yukitsune/amjwt/ci)](https://github.com/yukitsune/amjwt/actions?query=workflow:ci)
-[![Go Report Card](https://goreportcard.com/badge/github.com/yukitsune/amjwt)](https://goreportcard.com/report/github.com/yukitsune/amjwt)
-[![PkgGoDev](https://pkg.go.dev/badge/mod/github.com/yukitsune/amjwt)](https://pkg.go.dev/mod/github.com/yukitsune/amjwt)
+  [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/yukitsune/amjwt/ci)](https://github.com/yukitsune/amjwt/actions?query=workflow:ci)
+  [![Go Report Card](https://goreportcard.com/badge/github.com/yukitsune/amjwt)](https://goreportcard.com/report/github.com/yukitsune/amjwt)
+  [![PkgGoDev](https://pkg.go.dev/badge/mod/github.com/yukitsune/amjwt)](https://pkg.go.dev/mod/github.com/yukitsune/amjwt)
 </h3>
 
 # Usage
+
+## Pre-requisites
+Before you can generate a JWT, you'll need a **key id**, **team id**, and **private key file**.
+Rather than re-explaining that process, he's Apples docs: https://developer.apple.com/documentation/applemusicapi/getting_keys_and_creating_tokens
+
+Once you have those ready, you can use `amjwt` to generate the JWT.
+
 ## As a CLI
 
 `amjwt` can be used as a CLI. You can provide the key and team IDs via the `-k` and `-t` flags respectively. `-f` can be used to specify the path to the private key file.
@@ -46,4 +55,5 @@ Any contributions you make are **greatly appreciated**.
 5. Open a Pull Request
 
 # But... Why?
-Because for some reason, Apple wants you to hand craft the JWT to authenticate with the Apple Music API. 🤷‍
+Because for some reason, [Apple wants you to hand craft the JWT](https://developer.apple.com/documentation/applemusicapi/getting_keys_and_creating_tokens) to authenticate with the Apple Music API.
+This is much easier than hand crafting it every time.
