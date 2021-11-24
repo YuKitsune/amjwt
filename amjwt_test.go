@@ -27,7 +27,7 @@ func TestJwtContainsKeyId(t *testing.T) {
 	}
 
 	tok, err := jwt.Parse(token, func(token *jwt.Token) (interface{}, error) {
-		return publicKey, nil
+		return jwt.ParseECPublicKeyFromPEM(publicKey)
 	})
 	if err != nil {
 		t.Error(err)
@@ -55,7 +55,7 @@ func TestJwtContainsTeamId(t *testing.T) {
 	}
 
 	tok, err := jwt.Parse(token, func(token *jwt.Token) (interface{}, error) {
-		return publicKey, nil
+		return jwt.ParseECPublicKeyFromPEM(publicKey)
 	})
 	if err != nil {
 		t.Error(err)
@@ -88,7 +88,7 @@ func TestJwtExpiryIsSet(t *testing.T) {
 	}
 
 	tok, err := jwt.Parse(token, func(token *jwt.Token) (interface{}, error) {
-		return publicKey, nil
+		return jwt.ParseECPublicKeyFromPEM(publicKey)
 	})
 
 	currentTime := time.Now().Unix()
@@ -112,6 +112,6 @@ func readTestKeys() (privateKey []byte, publicKey []byte, err error) {
 		return privateKey, publicKey, err
 	}
 
-	publicKey, err = ioutil.ReadFile("test/private_key.pem")
+	publicKey, err = ioutil.ReadFile("test/public_key.pem")
 	return privateKey, publicKey, err
 }
